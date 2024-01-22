@@ -1,0 +1,43 @@
+.contact-us {
+    background-image: url("../resources/images/Contactbg.png");
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+
+    padding: 2rem 0;
+}
+
+.p {
+    margin-bottom: 0.5rem;
+}
+
+.card {
+    background-color: rgba(160, 158, 39, 0.2);
+    color: #fff;
+    width: auto;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(160, 158, 39);
+}
+
+.upperCards {
+    margin: 1rem auto;
+}
+
+.lowerCards {
+    margin: 1rem auto;
+}
+
+.row {
+    padding: 1rem 0;
+}
+
+.title {
+    padding-top: 1rem;
+}
