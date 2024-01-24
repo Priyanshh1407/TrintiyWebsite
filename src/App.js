@@ -14,6 +14,7 @@ import EventsPage from './components/Events-page-components/EventsPage'
 import Sportspage from './components/Sports-page-components/Sports'
 import Cultural from './components/Cultural-page-component/Cultural'
 import Technical from './components/Technical-page-component/Technical'
+// import Deprev_cards from './components/Department_reveal-components/deprev_cards'
 // import Department_reveal from './components/Department-components/Department_reveal'
 
 const App = () => {

@@ -1,7 +1,7 @@
 // Card.js
 import React from 'react';
 
-const Card = ({ title, imageUrl, description }) => {
+const Card = ({ title, imageUrl, description,extra }) => {
   const handleTouchStart = (event) => {
     event.currentTarget.classList.toggle('hover');
   };
@@ -12,7 +12,7 @@ const Card = ({ title, imageUrl, description }) => {
         <div className="front" style={{ backgroundImage: `url(${imageUrl})` }}>
           <div className="inner">
             <p>{title}</p>
-      
+            <span>{extra}</span>
           </div>
         </div>
         <div className="back">

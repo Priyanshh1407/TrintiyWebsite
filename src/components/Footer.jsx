@@ -39,7 +39,7 @@ const Footer = () => {
 									djscetrinity@gmail.com
 								</a>
 								<p>
-									Meet Gosar: <a href='tel:+91 9987979684'>+91 99879 79684</a>
+									Farhan Mahida: <a href='tel:+91 8452885193'>+91 8452885193</a>
 								</p>
 							</div>
 						</div>
