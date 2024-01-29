@@ -8,6 +8,7 @@ const Sports = () => {
       <div className="sports">
         <div className="wrapper">
           <h1 className="sportsHeading">TRINITY SPORTS</h1>
+          <h5>Want to register? Scroll down and register yourself</h5>
           <div className="scols">
           <Card
               title="Badminton"
@@ -23,19 +24,19 @@ const Sports = () => {
             />
             <Card
               title="Table-Tennis"
-              imageUrl="https://images.unsplash.com/photo-1611251135345-18c56206b863?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              imageUrl="https://i.postimg.cc/WF1JyWB6/tabletennis.jpg"
               description="Date: 12th Feb 2024 Venue: Andheri Sports Complex"
               extra=""
             />
             <Card
               title="8 Ball Pool"
-              imageUrl="https://images.unsplash.com/photo-1686523090965-8d570b6cf68e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              imageUrl="https://i.postimg.cc/zLjg0ZcG/8ballpool.jpg"
               description="Date:  5th Feb 2024 Venue: RK Shoot Andheri"
               extra=""
             />
             <Card
               title="Chess"
-              imageUrl="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              imageUrl="https://i.postimg.cc/H8J8YJsr/chess.jpg"
               description="Date: 12th Feb 2024 Venue: College"
               extra=""
             />
@@ -59,7 +60,7 @@ const Sports = () => {
             />
             <Card
               title="Football"
-              imageUrl="https://images.unsplash.com/photo-1434648957308-5e6a859697e8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              imageUrl="https://i.postimg.cc/MXXQbLbz/football.jpg"
               description="Date: 14th Feb 2024 Venue: JP Sports Arena, Malad"
               extra=""
             />
@@ -71,7 +72,7 @@ const Sports = () => {
             />
             <Card
               title="Dodgeball"
-              imageUrl="https://images.unsplash.com/photo-1593786930094-d5c8164ac771?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              imageUrl="https://i.postimg.cc/R6pnx19r/dodgeball.jpg"
               description="Date: 14th Feb 2024 Venue: JP Sports Arena, Malad"
               extra="FOR GIRLS"
             />
@@ -83,11 +84,14 @@ const Sports = () => {
             />
             <Card
               title="Throwball"
-              imageUrl="https://images.unsplash.com/photo-1529478562208-d4c746edcb79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNwb3J0cyUyMHRlYW18ZW58MHx8MHx8fDA%3D"
+              imageUrl="https://i.postimg.cc/zL5hCXpQ/throwball.jpg"
               description="Date: 14th Feb 2024 Venue: Gopinath Munde Maidaan, Vile Parle"
               extra="FOR GIRLS"
             />
           </div>
+        </div>
+        <div className="register">
+        <button className="custom-btn btn-3"><a href="https://docs.google.com/forms/d/e/1FAIpQLScXaRpDUHhHbSO9hdnMFoPy2DEIyT4cH6dNWqAP26H88YsPNQ/viewform?usp=sf_link">REGISTER</a></button>
         </div>
       </div>
     </>

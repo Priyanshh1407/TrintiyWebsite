@@ -69,12 +69,12 @@ function NavBar() {
 									</li>
 									<li style={{ width: '80%' }} className='dropdown-item'>
 										<NavLink to='/cultural' onClick={() => setExpanded(false)}>
-											Cultural
+											CULTURAL
 										</NavLink>
 									</li>
 									<li style={{ width: '80%' }} className='dropdown-item'>
 										<NavLink to='/technical' onClick={() => setExpanded(false)}>
-											Technical
+											TECHNICAL
 										</NavLink>
 									</li>
 									</ul>

@@ -36,7 +36,7 @@ function Home() {
       <Gods_reveal Gods_revealClass="hand__cerberus" cloneClass="hand__cerberus-clone" />
       <Gods_reveal Gods_revealClass="hand__nyx" cloneClass="hand__nyx-clone" />
       <Gods_reveal Gods_revealClass="hand__horse" cloneClass="hand__horse-clone" />
-      <Gods_reveal Gods_revealClass="hand__athena" cloneClass="hand__athena-clone" /> */}
+      <Gods_reveal Gods_revealClass="hand__athena" cloneClass="hand__athena-clone" />
       {/* ... Repeat for other Gods_reveals ...
 
       {/* Add any additional components or elements here */}
