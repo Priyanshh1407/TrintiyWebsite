@@ -1,7 +1,7 @@
 import React from 'react'
 import CoreCard from './CoreCard'
 
-import img1 from '../../../resources/Core_Members_images/1.png'
+import img1 from '../../../resources/Core_Members_images/1.jpg'
 const ID_list = [
     img1
 ]
