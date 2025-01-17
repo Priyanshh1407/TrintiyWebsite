@@ -1,105 +1,120 @@
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import '../index.css'
-import image from '../resources/images/trinity-cropped.png'
-import { NavLink } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { useState } from 'react'
+import { Nav, Navbar } from 'react-bootstrap';
+import '../index.css';
+import image from '../resources/images/trinity-cropped.png';
+import { NavLink } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState,useEffect } from 'react';
 
 function NavBar() {
-	const [expanded, setExpanded] = useState(false)
+	const [expanded, setExpanded] = useState(false);
+	const [isScrolled,setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		let lastScrollY = window.scrollY; // To track the previous scroll position
+	
+		const handleScroll = () => {
+		  if (window.scrollY > 50 && window.scrollY > lastScrollY) {
+			// Scrolling down past 50px
+			setIsScrolled(true);
+		  } else if (window.scrollY <= 50 || window.scrollY < lastScrollY) {
+			// Scrolling up or back to the top
+			setIsScrolled(false);
+		  }
+		  lastScrollY = window.scrollY; // Update the last scroll position
+		};
+	
+		window.addEventListener('scroll', handleScroll);
+		
+		// Clean up the event listener when the component unmounts
+		return () => window.removeEventListener('scroll', handleScroll);
+	  }, []);	
+
+
 	return (
 		<Navbar
 			expanded={expanded}
 			collapseOnSelect
-			expand='lg'
-			className='nav sticky-top '
-			variant='dark'
+			expand="lg"
+			className={`sticky-top bg-black  ${isScrolled ? 'bg-opacity-50 backdrop-blur-md' : 'bg-gray-900'}`}
+			variant="dark"
 		>
-			<div className='container'>
-				<div className='nav-content'>
-					<Navbar.Brand>
-						<NavLink className='image' to='/' onClick={() => setExpanded(false)}>
-							<img
-								src={image}
-								alt='trinity logo'
-								width='180'
-								height='70'
-								className='d-inline-block align-top '
-							/>
-						</NavLink>
-					</Navbar.Brand>
-				</div>
+			<div className="container">
+				{/* Navbar Toggle for Mobile */}
 				<Navbar.Toggle
-					className='toggle'
-					aria-controls='responsive-navbar-nav'
+					className="toggle"
+					aria-controls="responsive-navbar-nav"
 					onClick={() => setExpanded(!expanded)}
 				/>
-				<Navbar.Collapse id='responsive-navbar-nav'>
-					<Nav className='mr-auto'>
-						<ul className='navbar-nav nav-links'>
-							<li>
-								<NavLink to='/' end onClick={() => setExpanded(false)}>
-									Home
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to='/about' onClick={() => setExpanded(false)}>
-									About
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to='team' onClick={() => setExpanded(false)}>
-									Team
-								</NavLink>
-							</li>
-							<li>
-								<a href='https://idpt-leaderboard.web.app/'>Leaderboard</a>
-							</li>
-							<li>
-								<NavDropdown
-									style={{ marginTop: '-8px' }}
-									title='Events'
-									id='collasible-nav-dropdown nav-links'
-								>
-									<ul>
-									<li style={{ width: '70%' }} className='dropdown-item'>
-										<NavLink to='/sports' onClick={() => setExpanded(false)}>
-											SPORTS
-										</NavLink>
-									</li>
-									<li style={{ width: '80%' }} className='dropdown-item'>
-										<NavLink to='/cultural' onClick={() => setExpanded(false)}>
-											CULTURAL
-										</NavLink>
-									</li>
-									<li style={{ width: '80%' }} className='dropdown-item'>
-										<NavLink to='/technical' onClick={() => setExpanded(false)}>
-											TECHNICAL
-										</NavLink>
-									</li>
-									</ul>
-								</NavDropdown>
-							</li>
-							<li>
-								<NavLink to='/sponsors' onClick={() => setExpanded(false)}>
-									Sponsors
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to='/gallery' onClick={() => setExpanded(false)}>
-									Gallery
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to='/contact' onClick={() => setExpanded(false)}>
-									Contact Us
-								</NavLink>
-							</li>
-						</ul>
+
+				{/* Navbar Content */}
+				<Navbar.Collapse id="responsive-navbar-nav">
+					{/* Left Links */}
+					<Nav className="mr-auto d-flex align-items-center">
+						<NavLink
+							className="nav-link mx-3"
+							to="/events"
+							onClick={() => setExpanded(false)}
+						>
+							Events
+						</NavLink>
+						<NavLink
+							className="nav-link mx-3"
+							to="/team"
+							onClick={() => setExpanded(false)}
+						>
+							Team
+						</NavLink>
+						<a
+							className="nav-link mx-3"
+							href="https://idpt-leaderboard.web.app/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Leaderboard
+						</a>
+					</Nav>
+
+					{/* Logo */}
+					<div className="mx-4 text-center">
+						<NavLink to="/" onClick={() => setExpanded(false)}>
+							<img
+								src={image}
+								alt="Trinity Logo"
+								width="180"
+								height="70"
+								className="d-inline-block align-top"
+							/>
+						</NavLink>
+					</div>
+
+					{/* Right Links */}
+					<Nav className="ml-auto d-flex align-items-center">
+						<NavLink
+							className="nav-link mx-3"
+							to="/sponsors"
+							onClick={() => setExpanded(false)}
+						>
+							Sponsors
+						</NavLink>
+						<NavLink
+							className="nav-link mx-3"
+							to="/gallery"
+							onClick={() => setExpanded(false)}
+						>
+							Gallery
+						</NavLink>
+						<NavLink
+							className="nav-link mx-3"
+							to="/contact"
+							onClick={() => setExpanded(false)}
+						>
+							Contact Us
+						</NavLink>
 					</Nav>
 				</Navbar.Collapse>
 			</div>
 		</Navbar>
-	)
+	);
 }
-export default NavBar
+
+export default NavBar;

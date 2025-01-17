@@ -1,139 +1,52 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Dropdown } from 'react-bootstrap'
-import InstagramIcon from '@mui/icons-material/Instagram'
-import FacebookIcon from '@mui/icons-material/Facebook'
-import TwitterIcon from '@mui/icons-material/Twitter'
-import YouTubeIcon from '@mui/icons-material/YouTube'
-
-import '../CSS/footer.css'
+import React from 'react';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const Footer = () => {
 	return (
-		<div className='footer-box'>
-			<div className='footerContainer'>
-				<div className='footerRow'>
-					<div className='column'>
-						<p className='heading'>About Us</p>
-						<p className='footerDesc'>
-							SVKM's Dwarkadas J. Sanghvi College of Engineering's Official festival -
-							Mumbai
-						</p>
+		<div className="footer">
+			<footer className="bg-black text-white py-8">
+				{/* Explicitly ensure no background image */}
+				<div 
+					className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8" 
+					style={{ backgroundImage: 'none' }}
+				>
+					{/* Contact Us Section */}
+					<div className="contact">
+						<h3 className="text-lg font-bold mb-4">Contact Us</h3>
+						<ul className="text-sm space-y-2">
+							<li>📍 SVKM's Dwarkadas Jivanlal Sanghvi College of Engineering, Vile Parle, Mumbai.</li>
+							<li>
+								📧 Email: <a href="mailto:info@djsce.ac.in" className="text-yellow-400 hover:underline">info@djsce.ac.in</a>
+							</li>
+							<li>📞 Phone: <a href="tel:+912223612234" className="text-yellow-400 hover:underline">+91 22 2361 2234</a></li>
+						</ul>
 					</div>
-					<div className='column'>
-						<div>
-							<p className='heading'>Address</p>
-							<p className='footerDesc'>
-								SVKM's Dwarkadas J. Sanghvi College of Engineering, Vile Parle West,
-								Mumbai-400056
-							</p>
-						</div>
-						<div>
-							<p className='heading'>Contact</p>
-							<div className='footerDesc'>
-								<a
-									href='mailto:djscetrinity@gmail.com'
-									target='_blank'
-									rel='noreferrer'
-								>
-									djscetrinity@gmail.com
-								</a>
-								<p>
-									Farhan Mahida: <a href='tel:+91 8452885193'>+91 8452885193</a>
-								</p>
-							</div>
+
+					{/* Social Media Icons */}
+					<div className="social-icons text-center">
+						<h3 className="text-lg font-bold mb-4">Follow Us</h3>
+						<div className="flex justify-center space-x-4">
+							<a href="https://www.facebook.com/people/Djsce-Trinity/pfbid0xkYxq4deAaWKbAbCceQqJjhDSRqZzXNGYYfuY2zULVi3GVBBBD7XYxMQyzLx5kK7l/" className="text-blue-500 hover:text-white"><FacebookIcon /></a>
+							<a href="https://www.instagram.com/djsce.trinity/" className="text-pink-500 hover:text-white"><InstagramIcon /></a>
+							<a href="https://twitter.com/djscetrinity" className="text-blue-400 hover:text-white"><TwitterIcon /></a>
+							<a href="https://www.youtube.com/@djscetrinity1543/videos" className="text-red-500 hover:text-white"><YouTubeIcon /></a>
 						</div>
 					</div>
-					<div className='column footer-links'>
-						<p className='heading'>Links</p>
-						<Link className='footerLinks' to='/'>
-							Home
-						</Link>
-						<Link className='footerLinks' to='/about'>
-							About
-						</Link>
 
-						<Link className='footerLinks' to='/team'>
-							Team
-						</Link>
-
-						<a className='footerLinks' href='https://idpt-leaderboard.web.app/'>
-							Leaderboard
-						</a>
-
-						<div className='footerLinks'>
-							<Dropdown>
-								<Dropdown.Toggle variant='success' id='eventsDropDown'>
-									Events
-								</Dropdown.Toggle>
-								<Dropdown.Menu id='dropDownItems'>
-									<Dropdown.Item id='dropDownItem'>
-										<Link to='/sports'>SPORTS</Link>
-									</Dropdown.Item>
-									<Dropdown.Item id='dropDownItem'>
-										<Link to='/cultural'>CULTURAL</Link>
-									</Dropdown.Item>
-									<Dropdown.Item id='dropDownItem'>
-										<Link to='/technical'>TECHNICAL</Link>
-									</Dropdown.Item>
-								</Dropdown.Menu>
-							</Dropdown>
-						</div>
-						<Link className='footerLinks' to='/sponsors'>
-							Sponsors
-						</Link>
-						<Link className='footerLinks' to='/gallery'>
-							Gallery
-						</Link>
-						<Link className='footerLinks' to='/contact'>
-							Contact Us
-						</Link>
-					</div>
-					<div className='column'>
-						<p className='heading'>Follow Us</p>
-						<div className='socialsList'>
-							<a
-								title='Instagram'
-								href='https://www.instagram.com/djsce.trinity'
-								target='_blank'
-								rel='noreferrer'
-								className='footerLinks'
-							>
-								<InstagramIcon />
-							</a>
-							<a
-								title='Facebook'
-								href='https://www.facebook.com/people/Djsce-Trinity/100005340645201/'
-								target='_blank'
-								rel='noreferrer'
-								className='footerLinks'
-							>
-								<FacebookIcon />
-							</a>
-							<a
-								title='Twitter'
-								href='https://twitter.com/djscetrinity'
-								target='_blank'
-								rel='noreferrer'
-								className='footerLinks'
-							>
-								<TwitterIcon />
-							</a>
-							<a
-								title='YouTube'
-								href='https://www.youtube.com/@djscetrinity1543/videos'
-								target='_blank'
-								rel='noreferrer'
-								className='footerLinks'
-							>
-								<YouTubeIcon />
-							</a>
-						</div>
+					{/* Address or Footer Note */}
+					<div className="text-sm text-center md:text-right">
+						<h3 className="text-lg font-bold mb-4">Address</h3>
+						<p>SVKM's Dwarkadas Jivanlal Sanghvi College of Engineering</p>
+						<p>Vile Parle, Mumbai, India</p>
+						<p>&copy; 2025 Trinity Fest. All Rights Reserved.</p>
 					</div>
 				</div>
-			</div>
+			</footer>
 		</div>
-	)
-}
+	);
+};
 
-export default Footer
+export default Footer;

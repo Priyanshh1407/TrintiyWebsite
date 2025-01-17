@@ -5,7 +5,7 @@ export default function CoCommMembers() {
     return (
         <div>
             {/* <h3>CO-COMMITTEE</h3> */}
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 <CoCommCard
                     imgUrl={coCommImage}
                 />;

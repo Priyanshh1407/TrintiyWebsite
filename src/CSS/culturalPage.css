@@ -1,3 +1,7 @@
+.cultural-page {
+    background-image: url('../images/12.png');
+}
+
 .culturalMsg{
     height: 60vh;
     display: flex;

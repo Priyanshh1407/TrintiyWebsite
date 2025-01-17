@@ -1,3 +1,7 @@
+.technical-page {
+    background-image: url('../images/12.png');
+}
+
 .technicalMsg{
     height: 60vh;
     display: flex;

@@ -9,6 +9,7 @@ import img6 from '../../../resources/Core_Members_images/28.jpg'
 import img7 from '../../../resources/Core_Members_images/29.jpg'
 import img8 from '../../../resources/Core_Members_images/30.jpg'
 import img9 from '../../../resources/Core_Members_images/31.jpg'
+
 const ID_list1 = [
     img1, img2, img3
 ]
@@ -21,7 +22,7 @@ const ID_list3 = [
 export default function SecretaryCards() {
     return (
         <>
-        <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
             {ID_list1.map((ele, id) => {
                 return (
                     <CoreCard
@@ -36,7 +37,7 @@ export default function SecretaryCards() {
                 )
             })}
         </div>
-        <div className='cards-container'>
+        <div className="flex flex-wrap justify-center">
             {ID_list2.map((ele, id) => {
                 return (
                     <CoreCard
@@ -51,7 +52,7 @@ export default function SecretaryCards() {
                 )
             })}
         </div>
-        <div className='cards-container'>
+        <div className="flex flex-wrap justify-center">
             {ID_list3.map((ele, id) => {
                 return (
                     <CoreCard

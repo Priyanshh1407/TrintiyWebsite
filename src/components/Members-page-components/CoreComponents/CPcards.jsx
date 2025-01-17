@@ -7,7 +7,7 @@ const ID_list = [
 ]
 export default function CPcards() {
     return (
-        <div className='cards-container'>
+        <div className="flex flex-wrap justify-center">
             {ID_list.map((ele, id) => {
                 return (
                     <CoreCard

@@ -38,7 +38,7 @@ const ID_list4 = [
 export default function HODCards() {
     return (
         <>
-            <div className='cards-container'>
+            <div className="container flex flex-wrap justify-center">
                 {ID_list1.map((ele, id) => {
                     return (
                         <CoreCard
@@ -53,7 +53,7 @@ export default function HODCards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list2.map((ele, id) => {
                     return (
                         <CoreCard
@@ -68,7 +68,7 @@ export default function HODCards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list3.map((ele, id) => {
                     return (
                         <CoreCard
@@ -83,7 +83,7 @@ export default function HODCards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list4.map((ele, id) => {
                     return (
                         <CoreCard

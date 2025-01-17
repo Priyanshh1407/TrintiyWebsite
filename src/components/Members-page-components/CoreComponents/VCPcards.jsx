@@ -17,7 +17,6 @@ import img14 from '../../../resources/Core_Members_images/20.jpg'
 import img15 from '../../../resources/Core_Members_images/21.jpg'
 import img16 from '../../../resources/Core_Members_images/22.jpg'
 
-
 const ID_list1 = [
     img1, img2
 ]
@@ -46,7 +45,7 @@ const ID_list8 = [
 export default function VCPcards() {
     return (
         <>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list1.map((ele, id) => {
                     return (
                         <CoreCard
@@ -61,7 +60,7 @@ export default function VCPcards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list2.map((ele, id) => {
                     return (
                         <CoreCard
@@ -76,7 +75,7 @@ export default function VCPcards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list3.map((ele, id) => {
                     return (
                         <CoreCard
@@ -91,7 +90,7 @@ export default function VCPcards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list4.map((ele, id) => {
                     return (
                         <CoreCard
@@ -106,7 +105,7 @@ export default function VCPcards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list5.map((ele, id) => {
                     return (
                         <CoreCard
@@ -121,7 +120,7 @@ export default function VCPcards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list6.map((ele, id) => {
                     return (
                         <CoreCard
@@ -136,7 +135,7 @@ export default function VCPcards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list7.map((ele, id) => {
                     return (
                         <CoreCard
@@ -151,7 +150,7 @@ export default function VCPcards() {
                     )
                 })}
             </div>
-            <div className='cards-container'>
+            <div className="flex flex-wrap justify-center">
                 {ID_list8.map((ele, id) => {
                     return (
                         <CoreCard
@@ -166,7 +165,6 @@ export default function VCPcards() {
                     )
                 })}
             </div>
-            
         </>
     )
 }
