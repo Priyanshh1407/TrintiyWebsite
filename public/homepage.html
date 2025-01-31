@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>Trinity</title>
+    <link rel="icon" href="/trinity-cropped.png" />
+
     <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             margin-top: 1%;
@@ -14,7 +17,8 @@
             margin-right: 15%;
             padding: 0;
             height: 100%;
-            overflow:visible;
+            overflow: visible;
+            box-sizing: border-box;
         }
 
         #container {
@@ -23,8 +27,9 @@
             width: 100%;
             height: 100%;
             touch-action: none;
-            z-index: -1; /* Make sure the shader background is behind content */
-            position:fixed;
+            z-index: -1;
+            /* Make sure the shader background is behind content */
+            position: fixed;
         }
 
         /* Sidebar styling */
@@ -32,14 +37,19 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%; /* Set width to 100% for full-width navbar */
+            width: 100%;
+            /* Set width to 100% for full-width navbar */
             background-color: #0000009c;
-            padding: 5px 0; /* Adjust padding for horizontal layout */
+            padding: 5px 0;
+            /* Adjust padding for horizontal layout */
             color: white;
             z-index: 10;
-            display: flex; /* Use flexbox for horizontal layout */
-            justify-content: center; /* Center the links horizontally */
-            align-items: center; /* Vertically center the links */
+            display: flex;
+            /* Use flexbox for horizontal layout */
+            justify-content: center;
+            /* Center the links horizontally */
+            align-items: center;
+            /* Vertically center the links */
             font-family: "Anek Latin";
             font-size: 23px;
         }
@@ -48,10 +58,11 @@
             color: white;
             text-decoration: none;
             padding: 15px 40px;
-            margin: 0 10px; /* Add spacing between links */
-            transition:  0.3s ease;
+            margin: 0 10px;
+            /* Add spacing between links */
+            transition: 0.3s ease;
         }
-        
+
 
         #navbar a:hover {
             background-color: #032c3fb9;
@@ -66,8 +77,9 @@
             cursor: pointer;
             font-size: 30px;
         }
-         /* Navigation Bar */
-         
+
+        /* Navigation Bar */
+
         .section {
             text-align: center;
             padding-bottom: 20%;
@@ -88,13 +100,14 @@
             position: relative;
             color: white;
         }
-        
+
         .about-section,
-        .theme-section{
+        .theme-section {
             max-width: 600px;
             text-align: left;
         }
-        .principal-section{
+
+        .principal-section {
             text-align: right;
         }
 
@@ -115,26 +128,156 @@
             color: #29a83e;
         }
 
+        .icon {
+            background-color: black;
+            display: none;
+            font-size: 30px;
+            color: white;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 20;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            #navbar {
+                display: none;
+                width: 100%;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                z-index: 10;
+            }
+
+            #navbar a {
+                font-size: 18px;
+                padding: 10px;
+            }
+
+            .icon {
+                display: block;
+            }
+
+            #navbar a.icon {
+                background: black;
+                display: block;
+                position: fixed;
+                right: 10px;
+                top: 10px;
+                z-index: 20;
+                color: white;
+                font-size: 24px;
+                padding: 10px;
+                cursor: pointer;
+            }
+
+            th {
+                display: none;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            tr {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .about-section,
+            .principal-section,
+            .theme-section {
+                display: flex;
+                flex-direction: column;
+                /* Stack vertically */
+                text-align: center;
+            }
+
+            .about-section,
+            .principal-section,
+            .theme-section img {
+                max-width: 100%;
+                /* Make image responsive */
+                margin-bottom: 20px;
+                /* Space between image and text */
+            }
+
+            .about-section,
+            .principal-section,
+            .theme-section h2 {
+                font-size: 32px;
+                /* Adjust font size for mobile */
+            }
+
+            .about-section,
+            .principal-section,
+            .theme-section p {
+                font-size: 18px;
+                /* Adjust paragraph text size */
+                text-align: center;
+                /* Center the text */
+            }
+
+
+            nav a {
+                float: none;
+                width: 100%;
+                text-align: left;
+                padding: 10px;
+            }
+
+            main {
+                padding: 0.5em;
+            }
+
+            header {
+                font-size: 1.5em;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                font-size: 1.2em;
+            }
+
+            nav a {
+                padding: 8px;
+                font-size: 1em;
+            }
+
+            main {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
+
 <body>
-    
+
     <!-- Sidebar -->
     <div id="navbar">
         <a href="/events">Events</a>
         <a href="/team">Team</a>
         <a href="/team">Leaderboard</a>
-            <a href="/">
-              <img style="opacity: 0%;"
-                src="./trinity-cropped.png"
-                alt="Trinity Logo"
-                width="180"
-                height="70"
-              />
-            </a>
+        <a href="/">
+            <img style="opacity: 0%;" src="./trinity-cropped.png" alt="Trinity Logo" width="180" height="70" />
+        </a>
         <a href="/sponsors">Sponsors</a>
         <a href="/gallery">Gallery</a>
         <a href="/contact">Contact Us</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            ☰
+        </a>
     </div>
 
     <button id="playButton">🔊</button>
@@ -152,108 +295,136 @@
         MARCH 2025
     </div>
 
-    
+
     <div id="about" class="section principal-section bg-black text-white py-12">
         <div class="container mx-auto px-6 flex flex-wrap items-center">
             <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;">
-            <table style="width: 100%;">
-                <tr>
-       
-                    <td style="padding-right: 80px; width: 30%; text-align: center;">
-                        <div class="w-full md:w-2/5 mb-8 md:mb-0">
-                            <img src="./trinity-cropped.png" alt="trinity" style="max-width: 400px; border-radius: 10px;"/>
-                        </div>
-                    </td>
-                    <td style="width: 70%; text-align: left;">
-                        <div class="w-full md:w-3/5 text-left">
-                            <!-- <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;"> -->
+                <table style="width: 100%;">
+                    <tr>
+
+                        <td class="about-section" style="padding-right: 80px; width: 30%; text-align: center;">
+                            <div class="w-full md:w-2/5 mb-8 md:mb-0">
+                                <img src="./trinity-cropped.png" alt="trinity"
+                                    style="max-width: 400px; border-radius: 10px;" />
+                            </div>
+                        </td>
+                        <td class="about-section" style="width: 70%; text-align: left;">
+                            <div class="w-full md:w-3/5 text-left">
+                                <!-- <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;"> -->
                                 <h2 class="text-5xl text-yellow mb-4">About Us </h2>
                                 <p class="text-lg leading-relaxed mt-4">
-                                    Trinity embodies the spirit of D.J. Sanghvi as the most anticipated and cherished annual socio-cultural, sports and technical festival. Trinity is a coalescence of innovation and technology, festivities and social responsibilities, and the competitive streak of sports. The grandeur of Trinity is sure to attract students not only from Mumbai but from colleges all around the world.
+                                    Trinity embodies the spirit of D.J. Sanghvi as the most anticipated and cherished
+                                    annual socio-cultural, sports and technical festival. Trinity is a coalescence of
+                                    innovation and technology, festivities and social responsibilities, and the
+                                    competitive streak of sports. The grandeur of Trinity is sure to attract students
+                                    not only from Mumbai but from colleges all around the world.
                                 </p>
                                 <p class="text-lg leading-relaxed mt-4">
-                                    The coveted IDPT trophy will be fought for by the students of the college. The department who shows exemplary teamwork and dedication will be the ones to lift this trophy. We are bound to have clashes between departments during the fest, but that will just make everyone hungrier to win it. The winner will take home bragging rights for a year, whereas those who don’t win will have that extra bit of motivation for next year. But remember the most important thing is to participate because as the saying goes, you either win or you learn.
+                                    The coveted IDPT trophy will be fought for by the students of the college. The
+                                    department who shows exemplary teamwork and dedication will be the ones to lift this
+                                    trophy. We are bound to have clashes between departments during the fest, but that
+                                    will just make everyone hungrier to win it. The winner will take home bragging
+                                    rights for a year, whereas those who don’t win will have that extra bit of
+                                    motivation for next year. But remember the most important thing is to participate
+                                    because as the saying goes, you either win or you learn.
                                 </p>
                             </div>
-                        <!-- </div> -->
-                    </td>
-                </tr>
-            </table>
-        </div>
+                            <!-- </div> -->
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-    
+
 
 
     <div id="principal-section" class="section principal-section bg-black text-white py-12">
         <div class="container mx-auto px-6 flex flex-wrap items-center">
             <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;">
-            <table style="width: 100%;">
-                <tr>
-                    <!-- Right Column (Text Content) -->
-                    <td style="width: 70%; text-align: left;">
-                        <div class="w-full md:w-3/5 text-left">
-                            <!-- <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;"> -->
+                <table style="width: 100%;">
+                    <tr>
+                        <!-- Right Column (Text Content) -->
+                        <td class="principal" style="width: 70%; text-align: left;">
+                            <div class="w-full md:w-3/5 text-left">
+                                <!-- <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;"> -->
                                 <h2 class="text-5xl text-yellow mb-4">Principal's Message </h2>
                                 <p class="text-lg leading-relaxed" style="font-style: italic; font-size: 25px;">
-                                    Dr Hari Vasudevan    
+                                    Dr Hari Vasudevan
                                 </p>
                                 <p class="text-lg leading-relaxed mt-4">
-                                    In a short span of 30 years, Dwarkadas J. Sanghvi College of Engineering (DJSCE), an Autonomous Institution, affiliated to the University of Mumbai and owned by SVKM has come a long way and has made its impact felt not only in the country, but also abroad. Our students have been performing exceedingly well in national and globally competent multinational companies and also in the universities in India and abroad as they pursue their higher education.
+                                    In a short span of 30 years, Dwarkadas J. Sanghvi College of Engineering (DJSCE), an
+                                    Autonomous Institution, affiliated to the University of Mumbai and owned by SVKM has
+                                    come a long way and has made its impact felt not only in the country, but also
+                                    abroad. Our students have been performing exceedingly well in national and globally
+                                    competent multinational companies and also in the universities in India and abroad
+                                    as they pursue their higher education.
                                 </p>
                             </div>
-                        <!-- </div> -->
-                    </td>
-                    <!-- Left Column (Image or any content) -->
-                    <td style="padding-right: 80px; width: 30%; text-align: center;">
-                        <div class="w-full md:w-2/5 mb-8 md:mb-0">
-                            <img src="./src/rsources/images/principal_sir_1.jpeg" alt="Principal" style="max-width: 400px; border-radius: 10px;"/>
-                        </div>
-                    </td>
-                        
-                </tr>
-            </table>
-        </div>
+                            <!-- </div> -->
+                        </td>
+                        <!-- Left Column (Image or any content) -->
+                        <td class="principal"
+                            style="padding-left: 10px; padding-right: 80px; width: 30%; text-align: center;">
+                            <div class="w-full md:w-2/5 mb-8 md:mb-0">
+                                <img src="/principal_sir_1.jpeg" alt="Principal Sir"
+                                    style="height:380px; border-radius: 10px;" />
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
     <div id="theme" class="section principal-section bg-black text-white py-12">
         <div class="container mx-auto px-6 flex flex-wrap items-center">
             <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;">
-            <table style="width: 100%;">
-                <tr>
-                    <td style="padding-right: 80px; width: 30%; text-align: center;">
-                        <div class="w-full md:w-2/5 mb-8 md:mb-0">
-                            <img src="./theme.png" alt="Principal" style="max-width: 8000px; border-radius: 10px;"/>
-                        </div>
-                    </td>
-                    <!-- Left Column (Image or any content) -->
-                    <td style="width: 70%; text-align: left;">
-                        <div class="w-full md:w-3/5 text-left">
-                            <!-- <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;"> -->
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="theme-section" style="padding-right: 80px; width: 30%; text-align: center;">
+                            <div class="w-full md:w-2/5 mb-8 md:mb-0">
+                                <img src="./theme.png" alt="Principal"
+                                    style="max-width: 8000px; border-radius: 10px;" />
+                            </div>
+                        </td>
+                        <!-- Left Column (Image or any content) -->
+                        <td class="theme-section" style="width: 70%; text-align: left;">
+                            <div class="w-full md:w-3/5 text-left">
+                                <!-- <div class="card" style="background-color: rgba(92, 89, 89, 0.2); padding: 20px; border-radius: 30px;"> -->
                                 <h2 class="text-5xl text-yellow mb-4">Theme</h2>
                                 <p class="text-lg leading-relaxed" style="font-size: 28px; font-style: italic;">
                                     Elements
                                 </p>
                                 <p class="text-lg leading-relaxed mt-4">
-                                    The theme revolving around the elements—Prithvi (Earth), Vayu (Air), Agni (Fire), Jal (Water), Samay (Time) and Vidyut (Electricity)—captures the essence of the natural forces that govern our world and existence. These elements symbolize the dynamic balance of life, each contributing uniquely to the cycle of creation, sustenance, and transformation. Together, they form an interconnected web that embodies both the physical and metaphysical realms, reflecting ancient wisdom and contemporary relevance.
+                                    The theme revolving around the elements—Prithvi (Earth), Vayu (Air), Agni (Fire),
+                                    Jal (Water), Samay (Time) and Vidyut (Electricity)—captures the essence of the
+                                    natural forces that govern our world and existence. These elements symbolize the
+                                    dynamic balance of life, each contributing uniquely to the cycle of creation,
+                                    sustenance, and transformation. Together, they form an interconnected web that
+                                    embodies both the physical and metaphysical realms, reflecting ancient wisdom and
+                                    contemporary relevance.
                                 </p>
                                 <p class="text-lg leading-relaxed mt-4">
-                                    As the ancient Sanskrit saying goes, "पञ्चमहाभूतानि देहस्य धारिणः" (Pancha Mahabhutani Dehasya Dharinah)—the five great elements are the bearers of the body, underscoring the profound connection between these elemental forces and our very being.
+                                    As the ancient Sanskrit saying goes, "पञ्चमहाभूतानि देहस्य धारिणः" (Pancha
+                                    Mahabhutani Dehasya Dharinah)—the five great elements are the bearers of the body,
+                                    underscoring the profound connection between these elemental forces and our very
+                                    being.
                                 </p>
                             </div>
-                        <!-- </div> -->
-                    </td>
-                    <!-- Right Column (Text Content) -->
+                            <!-- </div> -->
+                        </td>
+                        <!-- Right Column (Text Content) -->
 
-    
-                </tr>
-            </table>
-        </div>
+
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-    
-    
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
     <script id="vertexShader" type="x-shader/x-vertex">
@@ -262,7 +433,7 @@
         }
     </script>
     <script>
-         document.getElementById('playButton').addEventListener('click', function() {
+        document.getElementById('playButton').addEventListener('click', function () {
             const audio = document.getElementById('myAudio');
             audio.play().then(() => {
                 console.log('Audio is playing in a loop');
@@ -276,12 +447,12 @@
         const heading = document.getElementById('heading');
 
         // Add touch event listener to detect touch and increase intensity
-        heading.addEventListener('touchstart', function() {
+        heading.addEventListener('touchstart', function () {
             heading.classList.add('touched');
         });
 
         // Reset the intensity when touch ends
-        heading.addEventListener('touchend', function() {
+        heading.addEventListener('touchend', function () {
             heading.classList.remove('touched');
         });
     </script>
@@ -352,123 +523,129 @@
             gl_FragColor = vec4(fragcolour, 1.);
         }
     </script>
-<script>
-    
-    let container;
-    let camera, scene, renderer;
-    let uniforms;
+    <script>
 
-    let loader = new THREE.TextureLoader();
-    let texture, bg;
-    loader.setCrossOrigin("anonymous");
-    loader.load(
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/982762/noise.png',
-        (tex) => {
-            texture = tex;
-            texture.wrapS = THREE.RepeatWrapping;
-            texture.wrapT = THREE.RepeatWrapping;
-            texture.minFilter = THREE.LinearFilter;
-            loader.load(
-                'https://s3-us-west-2.amazonaws.com/s.cdpn.io/982762/clouds-1-tile.jpg',
-                (tex) => {
-                    bg = tex;
-                    bg.wrapS = THREE.RepeatWrapping;
-                    bg.wrapT = THREE.RepeatWrapping;
-                    bg.minFilter = THREE.LinearFilter;
-                    init();
-                    animate();
-                }
-            );
-        }
-    );
+        let container;
+        let camera, scene, renderer;
+        let uniforms;
 
-    let colors = [
-        new THREE.Color(1, 1, 0), // Yellow
-        new THREE.Color(1, 0, 0), // Red
-        new THREE.Color(0.5, 0, 1), // Purple
-        new THREE.Color(0, 0, 1), // Blue
-        new THREE.Color(0, 1, 0), // Green
-        new THREE.Color(0.5, 0.5, 0.5), // Grey
-        
-        
-    ];
+        let loader = new THREE.TextureLoader();
+        let texture, bg;
+        loader.setCrossOrigin("anonymous");
+        loader.load(
+            'https://s3-us-west-2.amazonaws.com/s.cdpn.io/982762/noise.png',
+            (tex) => {
+                texture = tex;
+                texture.wrapS = THREE.RepeatWrapping;
+                texture.wrapT = THREE.RepeatWrapping;
+                texture.minFilter = THREE.LinearFilter;
+                loader.load(
+                    'https://s3-us-west-2.amazonaws.com/s.cdpn.io/982762/clouds-1-tile.jpg',
+                    (tex) => {
+                        bg = tex;
+                        bg.wrapS = THREE.RepeatWrapping;
+                        bg.wrapT = THREE.RepeatWrapping;
+                        bg.minFilter = THREE.LinearFilter;
+                        init();
+                        animate();
+                    }
+                );
+            }
+        );
 
-    let colorIndex = 0;
-    let lastChangeTime = 0;
+        let colors = [
+            new THREE.Color(1, 1, 0), // Yellow
+            new THREE.Color(1, 0, 0), // Red
+            new THREE.Color(0.5, 0, 1), // Purple
+            new THREE.Color(0, 0, 1), // Blue
+            new THREE.Color(0, 1, 0), // Green
+            new THREE.Color(0.5, 0.5, 0.5), // Grey
 
-    function init() {
-        container = document.getElementById('container');
 
-        camera = new THREE.Camera();
-        camera.position.z = 1;
+        ];
 
-        scene = new THREE.Scene();
+        let colorIndex = 0;
+        let lastChangeTime = 0;
 
-        const geometry = new THREE.PlaneBufferGeometry(2, 2);
+        function init() {
+            container = document.getElementById('container');
 
-        uniforms = {
-            u_time: { type: "f", value: 1.0 },
-            u_resolution: { type: "v2", value: new THREE.Vector2() },
-            u_noise: { type: "t", value: texture },
-            u_bg: { type: "t", value: bg },
-            u_mouse: { type: "v2", value: new THREE.Vector2() },
-            u_scroll: { type: 'f', value: 0 },
-            u_lightcolour: { type: "v3", value: colors[colorIndex] }
-        };
+            camera = new THREE.Camera();
+            camera.position.z = 1;
 
-        const material = new THREE.ShaderMaterial({
-            uniforms: uniforms,
-            vertexShader: document.getElementById('vertexShader').textContent,
-            fragmentShader: document.getElementById('fragmentShader').textContent
-        });
-        material.extensions.derivatives = true;
+            scene = new THREE.Scene();
 
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
+            const geometry = new THREE.PlaneBufferGeometry(2, 2);
 
-        renderer = new THREE.WebGLRenderer();
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(window.innerWidth, window.innerHeight); // Full screen renderer size
-        container.appendChild(renderer.domElement);
+            uniforms = {
+                u_time: { type: "f", value: 1.0 },
+                u_resolution: { type: "v2", value: new THREE.Vector2() },
+                u_noise: { type: "t", value: texture },
+                u_bg: { type: "t", value: bg },
+                u_mouse: { type: "v2", value: new THREE.Vector2() },
+                u_scroll: { type: 'f', value: 0 },
+                u_lightcolour: { type: "v3", value: colors[colorIndex] }
+            };
 
-        onWindowResize();
-        window.addEventListener('resize', onWindowResize, false);
+            const material = new THREE.ShaderMaterial({
+                uniforms: uniforms,
+                vertexShader: document.getElementById('vertexShader').textContent,
+                fragmentShader: document.getElementById('fragmentShader').textContent
+            });
+            material.extensions.derivatives = true;
 
-        document.addEventListener('pointermove', (e) => {
-            const ratio = window.innerHeight / window.innerWidth;
-            uniforms.u_mouse.value.x = (e.pageX - window.innerWidth / 2) / window.innerWidth / ratio;
-            uniforms.u_mouse.value.y = (e.pageY - window.innerHeight / 2) / window.innerHeight * -1;
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
 
-            e.preventDefault();
-        });
-    }
+            renderer = new THREE.WebGLRenderer();
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight); // Full screen renderer size
+            container.appendChild(renderer.domElement);
 
-    function onWindowResize() {
-        renderer.setSize(window.innerWidth, window.innerHeight); // Resize renderer to full window
-        uniforms.u_resolution.value.x = renderer.domElement.width;
-        uniforms.u_resolution.value.y = renderer.domElement.height;
-    }
+            onWindowResize();
+            window.addEventListener('resize', onWindowResize, false);
 
-    function animate(delta) {
-        requestAnimationFrame(animate);
-        render(delta);
-    }
+            document.addEventListener('pointermove', (e) => {
+                const ratio = window.innerHeight / window.innerWidth;
+                uniforms.u_mouse.value.x = (e.pageX - window.innerWidth / 2) / window.innerWidth / ratio;
+                uniforms.u_mouse.value.y = (e.pageY - window.innerHeight / 2) / window.innerHeight * -1;
 
-    function render(delta) {
-        let now = Date.now();
-        
-        // Change color every 1 seconds
-        if (now - lastChangeTime >= 1000) {
-            colorIndex = (colorIndex + 1) % colors.length;
-            uniforms.u_lightcolour.value = colors[colorIndex];
-            lastChangeTime = now;
+                e.preventDefault();
+            });
         }
 
-        uniforms.u_time.value = -1000 + delta * 0.0005;
-        uniforms.u_scroll.value = window.scrollY;
-        renderer.render(scene, camera);
-    }
-</script>
+        function onWindowResize() {
+            renderer.setSize(window.innerWidth, window.innerHeight); // Resize renderer to full window
+            uniforms.u_resolution.value.x = renderer.domElement.width;
+            uniforms.u_resolution.value.y = renderer.domElement.height;
+        }
 
+        function animate(delta) {
+            requestAnimationFrame(animate);
+            render(delta);
+        }
+
+        function render(delta) {
+            let now = Date.now();
+
+            // Change color every 1 seconds
+            if (now - lastChangeTime >= 1000) {
+                colorIndex = (colorIndex + 1) % colors.length;
+                uniforms.u_lightcolour.value = colors[colorIndex];
+                lastChangeTime = now;
+            }
+
+            uniforms.u_time.value = -1000 + delta * 0.0005;
+            uniforms.u_scroll.value = window.scrollY;
+            renderer.render(scene, camera);
+        }
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("navbar");
+            x.style.display = (x.style.display === "block") ? "none" : "block";
+        }
+    </script>
 </body>
+
 </html>
